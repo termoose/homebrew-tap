@@ -2,16 +2,16 @@
 class Skyput < Formula
   desc "File upload utility for Skynet"
   homepage "https://github.com/termoose/skyput"
-  version "0.5.0"
+  version "0.6.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/termoose/skyput/releases/download/v0.5.0/skyput_0.5.0_Darwin_x86_64.tar.gz"
-    sha256 "9f074bf337c3f58a38167c9767fbd3160b6b949c4f47023df5cc1147961d0361"
+    url "https://github.com/termoose/skyput/releases/download/v0.6.0/skyput_0.6.0_Darwin_x86_64.tar.gz"
+    sha256 "399650cc45aa5a0b58ca5a93296dd1ec8c3b0f08a13b754d3e8e1956ee55cea0"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/termoose/skyput/releases/download/v0.5.0/skyput_0.5.0_Linux_x86_64.tar.gz"
-      sha256 "89aa6fd86620a7cb17f7f13facadd5c0e01144936428dfdec8724221bb9eb4be"
+      url "https://github.com/termoose/skyput/releases/download/v0.6.0/skyput_0.6.0_Linux_x86_64.tar.gz"
+      sha256 "424df8c0140d9b1ec54ef477419c931a288bcbdade699a0e4e97dd08b82e5dc9"
     end
   end
 
