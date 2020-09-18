@@ -2,16 +2,16 @@
 class IrccloudCli < Formula
   desc "Text-mode terminal client for IRCCloud"
   homepage "https://github.com/termoose/irccloud"
-  version "0.2.0"
+  version "0.2.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/termoose/irccloud/releases/download/v0.2.0/irccloud_0.2.0_Darwin_x86_64.tar.gz"
-    sha256 "8cb76ee7195a82795534c9a52f7d11fb895f316e0aaa53c080ac4b9f2221de1b"
+    url "https://github.com/termoose/irccloud/releases/download/v0.2.1/irccloud_0.2.1_Darwin_x86_64.tar.gz"
+    sha256 "084ccbbdf01a3583a463ae625cb48ef25b2fc9907b5f448feed197268557bb43"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/termoose/irccloud/releases/download/v0.2.0/irccloud_0.2.0_Linux_x86_64.tar.gz"
-      sha256 "35091406c5d1efd70061c40f992a8441a2f04b18764e7fd79e9801a921d4f5c6"
+      url "https://github.com/termoose/irccloud/releases/download/v0.2.1/irccloud_0.2.1_Linux_x86_64.tar.gz"
+      sha256 "2b11146995f628b0161f9671922fb32b7454210f4b253654b4d389723ce62bfb"
     end
   end
 
