@@ -5,27 +5,43 @@
 class IrccloudCli < Formula
   desc "Text-mode terminal client for IRCCloud"
   homepage "https://github.com/termoose/irccloud"
-  version "0.3.0"
-  bottle :unneeded
+  version "0.3.1"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/termoose/irccloud/releases/download/v0.3.0/irccloud_0.3.0_Darwin_x86_64.tar.gz"
-    sha256 "0d4a3cc4edeef6b68874adad0d742dc0ae6d74bd4d52682606ffd1aae318f989"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/termoose/irccloud/releases/download/v0.3.0/irccloud_0.3.0_Darwin_arm64.tar.gz"
-    sha256 "c9268f0b1c8ffc910e93126dfc477de4b7928d679edbb82cb938dbcd52aff7ed"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/termoose/irccloud/releases/download/v0.3.0/irccloud_0.3.0_Linux_x86_64.tar.gz"
-    sha256 "e199e6dae7bd6dcf342722b7342e8c3d44ba3dfb5132e7cddbe79d6d3c0fe8b2"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/termoose/irccloud/releases/download/v0.3.0/irccloud_0.3.0_Linux_arm64.tar.gz"
-    sha256 "4a695d3df5e6164392e02d2e315e2c4462f0b0ef52bf13f8ac960c2fc68d498f"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/termoose/irccloud/releases/download/v0.3.1/irccloud_0.3.1_Darwin_arm64.tar.gz"
+      sha256 "ba360da78236330d121a1121ae410c3e115cfc2aa9702b449272ceda1743eaed"
+
+      def install
+        bin.install "irccloud"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/termoose/irccloud/releases/download/v0.3.1/irccloud_0.3.1_Darwin_x86_64.tar.gz"
+      sha256 "d04b5fb9ba8a1a18424e10ed1c4058a0fb831e0fa3dbde67e6b9e0a004453fd3"
+
+      def install
+        bin.install "irccloud"
+      end
+    end
   end
 
-  def install
-    bin.install "irccloud"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/termoose/irccloud/releases/download/v0.3.1/irccloud_0.3.1_Linux_arm64.tar.gz"
+      sha256 "ccb491d486aa04796cfbbf3e5fe8885bd23bd167e7db698e47855cb7f350a343"
+
+      def install
+        bin.install "irccloud"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/termoose/irccloud/releases/download/v0.3.1/irccloud_0.3.1_Linux_x86_64.tar.gz"
+      sha256 "7794d7d5a009394f5546c8ffe5a58fb98f1fbfc2766f581441d183940231a4a5"
+
+      def install
+        bin.install "irccloud"
+      end
+    end
   end
 end
